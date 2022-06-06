@@ -1,0 +1,21 @@
+{% extends "Base/padre.html" %}
+
+{% load static %}
+
+{% block LineasInvestigacion %}
+
+{% for investigacion in object_list %}
+
+<li>{{investigacion}}</li>
+
+    <a href="{% url 'investigacion_detalle' investigacion.id %}"><button>DETALLE</button></a>
+    <a href="{% url 'investigacion_editar' investigacion.id %}"><button>EDITAR</button></a>
+    <a href="{% url 'investigacion_borrar' investigacion.id %}"><button>BORRAR</button></a>
+
+{% endfor %}
+
+<p>
+    <a href="{% url 'investigación_crear' %}"><button>AÑADIR</button></a>
+</p>
+
+{% endblock %}

@@ -1,0 +1,17 @@
+{% extends "Base/padre.html" %}
+
+{% load static %}
+
+{% block DirectorioLaboratorios %}
+
+<form method="post">{% csrf_token %}
+    ¿Estas seguro que deseas borrar el laboratorio "{{ object }}"?
+    <input type="submit" value="SI">
+
+</form>
+
+<p>
+    <a href="{% url 'laboratorio_crear' %}"><button>CREAR</button></a>
+</p>
+
+{% endblock %}

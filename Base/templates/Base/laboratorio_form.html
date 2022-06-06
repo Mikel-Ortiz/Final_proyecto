@@ -1,0 +1,17 @@
+{% extends "Base/padre.html" %}
+
+{% load static %}
+
+{% block DirectorioLaboratorios %}
+
+<form method="post" enctype="multipart/form-data">{% csrf_token %}
+    {{ form.as_p}}
+    <input type="submit" value="ENVIAR">
+
+</form>
+
+<p>
+    <a href="{% url 'laboratorio_crear' %}"><button>CREAR</button></a>
+</p>
+
+{% endblock %}

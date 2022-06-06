@@ -1,0 +1,39 @@
+{% extends "Base/padre.html" %}
+
+{% load static %}
+
+{% block DirectorioLaboratorios %}
+
+{% for laboratorio in object_list %}
+
+<li>{{laboratorio}}</li>
+
+    <a href="{% url 'laboratorio_detalle' laboratorio.id %}"><button>DETALLE</button></a>
+    <a href="{% url 'laboratorio_editar' laboratorio.id %}"><button>EDITAR</button></a>
+    <a href="{% url 'laboratorio_borrar' laboratorio.id %}"><button>BORRAR</button></a>
+
+    <div class="section-content">
+        <div class="owl-carousel owl-theme">
+            <div class="item">
+                <div class="image">
+                    <img src={{laboratorio.foto.url}} alt="">
+                    <div class="featured-button button">
+                        <a href="#projects">Continue Reading</a>
+                    </div>
+                </div>
+                <div class="text-content">
+                    <h4>{{laboratorio.nombre}}</h4>
+                    <span></span>
+                    <p>{{laboratorio.descripción}}</p>
+                </div>
+            </div>
+        </div>
+    </div> 
+
+{% endfor %}
+
+<p>
+    <a href="{% url 'laboratorio_crear' %}"><button>AÑADIR</button></a>
+</p>
+
+{% endblock %}

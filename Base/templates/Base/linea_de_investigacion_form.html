@@ -1,0 +1,17 @@
+{% extends "Base/padre.html" %}
+
+{% load static %}
+
+{% block LineasInvestigacion %}
+
+<form method="post">{% csrf_token %}
+    {{ form.as_p}}
+    <input type="submit" value="ENVIAR">
+
+</form>
+
+<p>
+    <a href="{% url 'investigación_crear' %}"><button>AÑADIR</button></a>
+</p>
+
+{% endblock %}

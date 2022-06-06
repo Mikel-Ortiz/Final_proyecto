@@ -1,0 +1,16 @@
+{% extends "Base/padre.html" %}
+
+{% load static %}
+
+<h1>HAS SALIDO DE TU SESIÓN</h1>
+
+    <h1>{{mensaje}}</h1>
+
+{% block DirectorioLaboratorios %}
+
+<p>
+    <a href="{% url 'laboratorio_crear' %}"><button>CREAR</button></a>
+</p>
+
+{% endblock %}
+

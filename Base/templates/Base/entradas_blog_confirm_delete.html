@@ -1,0 +1,17 @@
+{% extends "Base/padre.html" %}
+
+{% load static %}
+
+{% block Entradas_blog %}
+
+<form method="post">{% csrf_token %}
+    ¿Estas seguro que deseas borrar el blog: "{{ object }}"?
+    <input type="submit" value="SI">
+
+</form>
+
+<p>
+    <a href="{% url 'blog_crear' %}"><button>CREAR</button></a>
+</p>
+
+{% endblock %}

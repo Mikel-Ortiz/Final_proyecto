@@ -1,0 +1,15 @@
+{% extends "Base/padre.html" %}
+
+{% load static %}
+
+{% block DirectorioLaboratorios %}
+
+<form method="post">{% csrf_token %}
+    {{formulario.as_p}}
+    <button type="submit">REGISTRO</button>
+
+</form>
+
+{{mensaje}}
+{% endblock %}
+

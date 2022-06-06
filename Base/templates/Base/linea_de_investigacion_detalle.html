@@ -1,0 +1,20 @@
+{% extends "Base/padre.html" %}
+
+{% load static %}
+
+{% block LineasInvestigacion %}
+
+<p>LÍNEA DE INVESTIGACIÓN : <i>{{investigacion.linea_de_investigacion}}</i></p>
+<p>DESCRIPCIÓN : <i>{{investigacion.descripción}}</i></p>
+<p>RESPONSABLE : <i>{{investigacion.responsable}}</i></p>
+
+<p>
+    <a href="{% url 'investigación_listar' %}">REGRESAR</a>
+</p>
+
+<p>
+    <a href="{% url 'investigación_crear' %}"><button>AÑADIR</button></a>
+</p>
+
+
+{% endblock %}

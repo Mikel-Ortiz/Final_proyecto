@@ -1,0 +1,17 @@
+{% extends "Base/padre.html" %}
+
+{% load static %}
+
+{% block LineasInvestigacion %}
+
+<form method="post">{% csrf_token %}
+    ¿Estas seguro que deseas borrar la línea de investigación "{{ object }}"?
+    <input type="submit" value="SI">
+
+</form>
+
+<p>
+    <a href="{% url 'investigación_crear' %}"><button>AÑADIR</button></a>
+</p>
+
+{% endblock %}

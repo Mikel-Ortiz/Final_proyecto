@@ -1,0 +1,33 @@
+{% extends "Base/padre.html" %}
+
+{% load static %}
+
+{% block Eventos %}
+
+{% for evento in object_list %}
+
+<li>{{evento}}</li>
+
+    <a href="{% url 'evento_detalle' evento.id %}"><button>DETALLE</button></a>
+    <a href="{% url 'evento_editar' evento.id %}"><button>EDITAR</button></a>
+    <a href="{% url 'evento_borrar' evento.id %}"><button>BORRAR</button></a>
+
+    <div class="section-content">
+        <div class="text-content">
+            <h4>{{evento.nombre}}</h4>
+            <span></span>
+            <p>{{evento.descripción}}</p>
+            <span>{{evento.fecha}}</span>
+            <div class="featured-button button">
+                <a href="#projects">Continue Reading</a>
+            </div>
+        </div>
+    </div> 
+
+{% endfor %}
+
+<p>
+    <a href="{% url 'evento_crear' %}"><button>AÑADIR</button></a>
+</p>
+
+{% endblock %}

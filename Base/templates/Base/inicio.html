@@ -1,0 +1,68 @@
+{% extends "Base/padre.html" %}
+
+{% load static %}
+
+{% block DirectorioLaboratorios %}
+
+<p>
+    <a href="{% url 'laboratorio_crear' %}"><button>AÑADIR</button></a>
+</p>
+
+{% endblock %}
+
+{% block LineasInvestigacion %}
+
+<p>
+    <a href="{% url 'investigación_crear' %}"><button>AÑADIR</button></a>
+</p>
+
+
+{% endblock %} 
+
+{% block Eventos %}
+
+<p>
+    <a href="{% url 'evento_crear' %}"><button>AÑADIR</button></a>
+</p>
+
+{% endblock %}
+
+    
+{% block Entradas_blog %}
+
+<div class="section-content">
+    <div class="tabs-content">
+        <div class="wrapper">
+            <ul class="tabs clearfix" data-tabgroup="first-tab-group">
+              <li><a href="#tab1" class="active">July 2022</a></li>
+              <li><a href="#tab2">Agosto 2022</a></li>
+              <li><a href="#tab3">Septiembre 2022</a></li>
+              <li><a href="#tab4">Octubre 2022</a></li>
+            </ul>
+            <section id="first-tab-group" class="tabgroup">
+                <div id="tab1">
+                    <ul>
+                        <li>
+                            <div class="item">
+                                <a href="{% url 'blog_crear' %}"><button>AÑADIR</button></a>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+            </section>
+        </div>
+    </div>
+</div>
+
+{% endblock %}
+
+{% block Contacto %}
+<form id="contact" action="" method="POST">
+    {% csrf_token %}
+    <table>
+        {{formulario.as_p}}
+    </table>
+</form>
+</div>
+
+{% endblock %}
