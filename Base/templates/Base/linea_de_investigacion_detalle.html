@@ -2,19 +2,26 @@
 
 {% load static %}
 
-{% block LineasInvestigacion %}
+{% block Pagina %}
 
-<p>LÍNEA DE INVESTIGACIÓN : <i>{{investigacion.linea_de_investigacion}}</i></p>
-<p>DESCRIPCIÓN : <i>{{investigacion.descripción}}</i></p>
-<p>RESPONSABLE : <i>{{investigacion.responsable}}</i></p>
+<section id="projects" class="content-section">
+    <div class="section-heading">
+        <h1>Líneas<br><em>de Investigación</em></h1>
+        <p>Investigaciones desarrolladas 
+        <br>por diversos laboratorios.</p>
+    </div>
 
-<p>
-    <a href="{% url 'investigación_listar' %}">REGRESAR</a>
-</p>
+    <p>LÍNEA DE INVESTIGACIÓN : <i>{{investigacion.linea_de_investigacion}}</i></p>
+    <p>DESCRIPCIÓN : <i>{{investigacion.descripción}}</i></p>
+    <p>RESPONSABLE : <i>{{investigacion.responsable}}</i></p>
 
-<p>
-    <a href="{% url 'investigación_crear' %}"><button>AÑADIR</button></a>
-</p>
+    <p>
+        <a href="{% url 'investigación_listar' %}">REGRESAR</a> 
+    </p>
+    <div class="white-button button">
+        <a href="{% url 'inicio' %}"><em>Inicio</em></a>
+    </div>
+</section>
 
 
 {% endblock %}

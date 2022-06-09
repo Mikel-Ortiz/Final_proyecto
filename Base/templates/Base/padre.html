@@ -61,197 +61,35 @@ https://templatemo.com/tm-518-sentra
             <div class="logo">
                 <a href="#">SEPI<em>Blog</em></a>
             </div>
-            <nav>
-                <ul>
-                    <li>
-                        <div class="accent-button button">
-                        <a href="{% url 'login' %}">Login</a>
-                        </div>
-                    </li>
-                    <li>
-                        <a href="#inicio">
-                            <span class="rect"></span>
-                            <span class="circle"></span>
-                            Inicio
-                        </a>
-                    </li>
-                    <li>
-                        <a href="#featured">
-                            <span class="rect"></span>
-                            <span class="circle"></span>
-                            Directorio de Laboratorios
-                        </a>
-                    </li>
-                    <li>
-                        <a href="#projects">
-                            <span class="rect"></span>
-                            <span class="circle"></span>
-                            Líneas de Investigación
-                        </a>
-                    </li>
-                    <li>
-                        <a href="#video">
-                            <span class="rect"></span>
-                            <span class="circle"></span>
-                            Eventos
-                        </a>
-                    </li>
-                    <li>
-                        <a href="#blog">
-                            <span class="rect"></span>
-                            <span class="circle"></span>
-                            Blogbook
-                        </a>
-                    </li>
-                    <li>
-                        <a href="#contact">
-                            <span class="rect"></span>
-                            <span class="circle"></span>
-                            Contáctanos
-                        </a>
-                    </li>
-                </ul>
-            </nav>
+            {% block Barranav %} 
+
+            {% endblock %} 
+
+            <li>
+                {% if not request.user.is_authenticated %}
+                <div class="accent-button button">
+                <a href="{% url 'login' %}">Login</a> <a href="{% url 'register' %}">Regístrate</a>
+                </div>
+                {% else %}
+                <div class="accent-button button">
+                <a href="{% url 'logout' %}">Logout</a> <a href="{% url 'register' %}">Regístrate</a>
+                </div>
+                {% endif %}
+            </li>
             <ul class="social-icons">
-                <li><a href="#"><i class="fa fa-facebook"></i></a></li>
-                <li><a href="#"><i class="fa fa-twitter"></i></a></li>
-                <li><a href="#"><i class="fa fa-linkedin"></i></a></li>
-                <li><a href="#"><i class="fa fa-rss"></i></a></li>
-                <li><a href="#"><i class="fa fa-behance"></i></a></li>
-            </ul>
+                <li><a href="https://es-la.facebook.com/oficial.esm/"><i class="fa fa-facebook"></i></a></li>
+                <li><a href="https://twitter.com/ESM_Oficial"><i class="fa fa-twitter"></i></a></li>
+             </ul>
         </div>
-
-        <div class="slider">
-            <div class="Modern-Slider content-section" id="inicio">
-                <!-- Item -->
-                <div class="item item-1">
-                    <div class="img-fill">
-                    <div class="image"></div>
-                    <div class="info">
-                        <div>
-                          <h1>Beautiful Template<br>Sentra</h1>
-                          <p>Sentra is free Bootstrap CSS Template by templatemo website.<br>
-                          	Please share our site link to your friends.</p>
-                          <div class="white-button button">
-                              <a href="#featured">Discover More</a>
-                          </div>
-                        </div>
-                        </div>
-                    </div>
-                </div>
-                <!-- // Item -->
-                <!-- Item -->
-                <div class="item item-2">
-                    <div class="img-fill">
-                        <div class="image"></div>
-                        <div class="info">
-                        <div>
-                          <h1>Please tell <br>your friends</h1>
-                          <p>Support templatemo by sharing a link to your friends.
-							<br>Thank you for helping us.</p>
-                          
-                          <div class="white-button button">
-                              <a href="#featured">Share More</a>
-                          </div>
-                        </div>
-                        </div>
-                    </div>
-                </div>
-                <!-- // Item -->
-                <!-- Item -->
-                <div class="item item-3">
-                    <div class="img-fill">
-                        <div class="image"></div>
-                        <div class="info">
-                        <div>
-                          <h1>Suspendisse suscipit<br>nulla sed</h1>
-                          <p>Vestibulum ante ipsum primis in faucibus orci luctus et ultrices <br>posuere cubilia Curae; Sed at massa turpis.</p>
-                          
-                          <div class="white-button button">
-                              <a href="#featured">Learn More</a>
-                          </div>
-                        </div>
-                        </div>
-                    </div>
-                </div>
-                <!-- // Item -->
-            </div>
-        </div>
-
+        {% block Slider %}
+        
+        {% endblock %}
 
         <div class="page-content">
-            <section id="featured" class="content-section">
-                <div class="section-heading">
-                    <h1>Directorios<br><em>de Laboratorios</em></h1>
-                    <p>Laboratorios en la Escuela Superior de Medicna 
-                    <br>del Instituto Politécnico Nacional</p>
-                </div>
-                {% block DirectorioLaboratorios %}
+            {% block Pagina %}
 
-                {% endblock %}
-            </section>
-            <section id="projects" class="content-section">
-                <div class="section-heading">
-                    <h1>Líneas<br><em>de Investigación</em></h1>
-                    <p>Investigaciones desarrolladas 
-                    <br>por diversos laboratorios.</p>
-                </div>
-                {% block LineasInvestigacion %}
-
-                {% endblock %}           
-            </section>
-            <section id="video" class="content-section">
-                <div class="row">
-                    <div class="col-md-12">
-                        <div class="section-heading">
-                            <h1>Aquí verás los <em>eventos</em> programados.</h1>
-                            <p>Eventos según el calendario del año 2022</p>
-                        </div>
-                    </div>
-                </div>
-                {% block Eventos %}
-
-                {% endblock %}
-            </section>
-            <section id="blog" class="content-section">
-                <div class="section-heading">
-                    <h1>Entradas<br><em>de Blog</em></h1>
-                    <p>¿Quieres colaborar con algún equipo? ¿Necesitas un reactivo en esepecial? ¿Conoces qué congreso
-                    <br>le podría interesar a la comunidad? Aquí puedes dejar por escrito todo lo que se te venga a la mente.</p>
-                </div>
-                {% block Entradas_blog %}
-
-                {% endblock %}
-            </section>
-            <section id="contact" class="content-section">
-                <div id="map">
-                
-                	<!-- How to change your own map point
-                           1. Go to Google Maps
-                           2. Click on your location point
-                           3. Click "Share" and choose "Embed map" tab
-                           4. Copy only URL and paste it within the src="" field below
-                    -->
-                    <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d1881.0534665973296!2d-99.16781303558197!3d19.450955883492426!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x85d1fa3d53b35365%3A0xe99567abf0cf6946!2sESM%20-%20Escuela%20Superior%20de%20Medicina%20-%20IPN!5e0!3m2!1ses-419!2smx!4v1653428428517!5m2!1ses-419!2smx" width="100%" height="400px" frameborder="0" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>    
-                </div>
-                <div id="contact-content">
-                    <div class="section-heading">
-                        <h1>Nos puedes <br><em>Contactar aquí</em></h1>
-                        <p>Deja tu mensaje. 
-                        <br>Nos pondremos en contacto contigo.</p>
-                    </div>
-                    <div class="section-content">
-                        {% block Contacto %}
-
-                        {% endblock %}
-                    </div>
-                </div>
-            </section>
-            <section class="footer">
-                <p>Copyright &copy; 2019 Company Name 
-                
-                . Design: TemplateMo</p>
-            </section>
+            {% endblock %}
+            
         </div>
 
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>

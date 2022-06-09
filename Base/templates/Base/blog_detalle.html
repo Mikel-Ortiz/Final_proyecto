@@ -1,0 +1,27 @@
+{% extends "Base/padre.html" %}
+
+{% load static %}
+
+{% block Pagina %}
+
+<section id="blog" class="content-section">
+    <div class="section-heading">
+        <h1>Entradas<br><em>de Blog</em></h1>
+        <p>¿Quieres colaborar con algún equipo? ¿Necesitas un reactivo en esepecial? ¿Conoces qué congreso
+        <br>le podría interesar a la comunidad? Aquí puedes dejar por escrito todo lo que se te venga a la mente.</p>
+    </div>
+
+
+<p>TÍTULO: <i>{{blog.titulo}}</i></p>
+<p>CONTENIDO : <i>{{blog.contenido}}</i></p>
+<p>IMAGEN : <i>{{blog.imagen}}</i></p>
+<p>FECHA : <i>{{blog.fecha_subido}}</i></p>
+
+<p>
+    <a href="{% url 'blog_listar' %}">REGRESAR</a> <a class="btn btn-primary" href="{% url 'inicio' %}"><em>Inicio</em></a>
+</p>
+
+
+</section>
+
+{% endblock %}

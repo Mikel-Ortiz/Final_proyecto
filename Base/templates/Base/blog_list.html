@@ -1,0 +1,57 @@
+{% extends "Base/padre.html" %}
+
+{% load static %}
+
+{% block Pagina %}
+<section id="blog" class="content-section">
+    <div class="section-heading">
+        <h1>Entradas<br><em>de Blog</em></h1>
+        <p>¿Quieres colaborar con algún equipo? ¿Necesitas un reactivo en esepecial? ¿Conoces qué congreso
+        <br>le podría interesar a la comunidad? Aquí puedes dejar por escrito todo lo que se te venga a la mente.</p>
+    </div>
+
+    {% for blog in object_list %}
+
+    <li>{{blog}}</li>
+
+        <a href="{% url 'blog_detalle' blog.id %}"><button>DETALLE</button></a>
+        <a href="{% url 'blog_editar' blog.id %}"><button>EDITAR</button></a>
+        <a href="{% url 'blog_borrar' blog.id %}"><button>BORRAR</button></a>
+
+        <div class="section-content">
+            <div class="tabs-content">
+                <div class="wrapper">
+                    <ul class="tabs clearfix" data-tabgroup="first-tab-group">
+
+                    </ul>
+                    <section id="first-tab-group" class="tabgroup">
+                        <div id="tab1">
+                            <ul>
+                                <li>
+                                    <div class="item">
+                                        <img src="{{blog.imagen.url}}" alt="">
+                                        <div class="text-content">
+                                            <h4>{{blog.titulo}}</h4>
+                                            <span>{{blog.fecha_subido}}</span>
+                                            <p>{{blog.contenido}}</p>
+                                            
+                                            <div class="accent-button button">
+                                                <a href="#contact">Continue Reading</a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </li>
+                            </ul>
+                        </div>
+                    </section>
+                </div>
+            </div>
+        </div>
+
+    {% endfor %}
+
+<p>
+    <a href="{% url 'blog_crear' %}"><button>AÑADIR</button></a> <a class="btn btn-primary" href="{% url 'inicio' %}"><em>Inicio</em></a>
+</p>
+</section>
+{% endblock %}

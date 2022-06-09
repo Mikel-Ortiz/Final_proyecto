@@ -2,16 +2,26 @@
 
 {% load static %}
 
-{% block LineasInvestigacion %}
+{% block Pagina %}
 
-<form method="post">{% csrf_token %}
-    ¿Estas seguro que deseas borrar la línea de investigación "{{ object }}"?
-    <input type="submit" value="SI">
+<section id="projects" class="content-section">
+    <div class="section-heading">
+        <h1>Líneas<br><em>de Investigación</em></h1>
+        <p>Investigaciones desarrolladas 
+        <br>por diversos laboratorios.</p>
+    </div>
 
-</form>
+    <form method="post">{% csrf_token %}
+        ¿Estas seguro que deseas borrar la línea de investigación "{{ object }}"?
+        <input type="submit" value="SI">
 
-<p>
-    <a href="{% url 'investigación_crear' %}"><button>AÑADIR</button></a>
-</p>
+    </form>
 
+    <p>
+        <a href="{% url 'investigación_crear' %}"><button>AÑADIR</button></a> 
+        </p>
+    <div class="white-button button">
+        <a href="{% url 'inicio' %}"><em>Inicio</em></a>
+    </div>
+</section>
 {% endblock %}

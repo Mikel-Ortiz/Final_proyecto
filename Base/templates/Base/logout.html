@@ -2,15 +2,20 @@
 
 {% load static %}
 
-<h1>HAS SALIDO DE TU SESIÓN</h1>
+{% block Pagina %}
 
+<section id="projects" class="content-section">
+    <div class="section-heading">
+        <h1>Has<br><em>salido de tu sesión</em></h1>
+        <p>¡Vuelve pronto!</p>
+    </div>
     <h1>{{mensaje}}</h1>
-
-{% block DirectorioLaboratorios %}
-
-<p>
-    <a href="{% url 'laboratorio_crear' %}"><button>CREAR</button></a>
-</p>
+    <div class="accent-button button">
+        <a href="{% url 'inicio' %}">Volver al Inicio</a>
+    </div>
+</section>
 
 {% endblock %}
+
+
 

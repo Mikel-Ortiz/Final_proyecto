@@ -2,14 +2,22 @@
 
 {% load static %}
 
-{% block DirectorioLaboratorios %}
+{% block Pagina %}
 
-<form method="post">{% csrf_token %}
+<section id="projects" class="content-section">
+    <div class="section-heading">
+        <h1>Para<br><em>Registrarte</em></h1>
+        <p>Por favor introduce <br>El nombre de usario y la contraseña que desees. </p>
+    </div>
+
+<form action='' method="post">{% csrf_token %}
     {{formulario.as_p}}
     <button type="submit">REGISTRO</button>
 
 </form>
 
+<div class="white-button button">
+    <a href="{% url 'inicio' %}"><em>Inicio</em></a>
+</div>
 {{mensaje}}
 {% endblock %}
-

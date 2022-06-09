@@ -9,7 +9,8 @@ class Contacto_formulario(forms.Form):
     mensaje = forms.CharField(widget=forms.Textarea)
 
 class UserRegistrationForm(UserCreationForm):
-    email = forms.EmailField(required=True)
+    username = forms.CharField(label="Usuario", max_length=200)
+    email = forms.EmailField(label="Correo", required=True)
     password1 = forms.CharField(label="Contraseña", widget=forms.PasswordInput)
     password2 = forms.CharField(label="Confirmar contraseña", widget=forms.PasswordInput)
 

@@ -2,20 +2,31 @@
 
 {% load static %}
 
-{% block LineasInvestigacion %}
+{% block Pagina %}
 
-{% for investigacion in object_list %}
+<section id="projects" class="content-section">
+    <div class="section-heading">
+        <h1>Líneas<br><em>de Investigación</em></h1>
+        <p>Investigaciones desarrolladas 
+        <br>por diversos laboratorios.</p>
+    </div>
 
-<li>{{investigacion}}</li>
+    {% for investigacion in object_list %}
 
-    <a href="{% url 'investigacion_detalle' investigacion.id %}"><button>DETALLE</button></a>
-    <a href="{% url 'investigacion_editar' investigacion.id %}"><button>EDITAR</button></a>
-    <a href="{% url 'investigacion_borrar' investigacion.id %}"><button>BORRAR</button></a>
+    <li>{{investigacion}}</li>
 
-{% endfor %}
+        <a href="{% url 'investigacion_detalle' investigacion.id %}"><button>DETALLE</button></a>
+        <a href="{% url 'investigacion_editar' investigacion.id %}"><button>EDITAR</button></a>
+        <a href="{% url 'investigacion_borrar' investigacion.id %}"><button>BORRAR</button></a>
 
-<p>
-    <a href="{% url 'investigación_crear' %}"><button>AÑADIR</button></a>
-</p>
+    {% endfor %}
+
+    <p>
+        <a href="{% url 'investigación_crear' %}"><button>AÑADIR</button></a>
+        <div class="white-button button">
+            <a href="{% url 'inicio' %}"><em>Inicio</em></a>
+        </div>
+    </p>
+</section>
 
 {% endblock %}

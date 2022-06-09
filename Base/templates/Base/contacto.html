@@ -2,13 +2,14 @@
 
 {% load static %}
 
-{% block Contacto}
-<div class="section-content">
-    <form id="contact" action="" method="POST">
-        {% csrf_token %}
-        <table>
-            {{formulario.as_p}}
-        </table>
-    </form>
-</div>
+{% block Pagina%}
+
+<p>{{mensaje}}</p>
+
+{% endblock %}
+
+{% block Pagina}
+
+<p>{{mensaje}}</p>
+
 {% endblock}

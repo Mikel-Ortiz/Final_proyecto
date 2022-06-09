@@ -1,0 +1,29 @@
+{% extends "Base/padre.html" %}
+
+{% load static %}
+
+{% block inicio %} 
+<a class="btn btn-primary" href="{% url 'inicio' %}"><em>Inicio</em></a>
+{% endblock %}
+
+{% block Pagina %}
+
+<section id="blog" class="content-section">
+    <div class="section-heading">
+        <h1>Entradas<br><em>de Blog</em></h1>
+        <p>¿Quieres colaborar con algún equipo? ¿Necesitas un reactivo en esepecial? ¿Conoces qué congreso
+        <br>le podría interesar a la comunidad? Aquí puedes dejar por escrito todo lo que se te venga a la mente.</p>
+    </div>
+
+
+<form method="post" enctype="multipart/form-data">{% csrf_token %}
+    {{ form.as_p}}
+    <input type="submit" value="ENVIAR">
+
+</form>
+
+</section>
+
+    <a class="btn btn-primary" href="{% url 'inicio' %}"><em>Inicio</em></a>
+    
+{% endblock %}

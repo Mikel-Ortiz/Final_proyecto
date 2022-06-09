@@ -2,16 +2,27 @@
 
 {% load static %}
 
-{% block DirectorioLaboratorios %}
+{% block Pagina %}
 
-<form method="post">{% csrf_token %}
-    ¿Estas seguro que deseas borrar el laboratorio "{{ object }}"?
-    <input type="submit" value="SI">
+<section id="featured" class="content-section">
+    <div class="section-heading">
+        <h1>Directorios<br><em>de Laboratorios</em></h1>
+        <p>Laboratorios en la Escuela Superior de Medicna 
+        <br>del Instituto Politécnico Nacional</p>
 
-</form>
+    </div>
 
-<p>
-    <a href="{% url 'laboratorio_crear' %}"><button>CREAR</button></a>
-</p>
+    <form method="post">{% csrf_token %}
+        ¿Estas seguro que deseas borrar el laboratorio "{{ object }}"?
+        <input type="submit" value="SI">
 
+    </form>
+
+    <p>
+        <a href="{% url 'laboratorio_crear' %}"><button>CREAR</button></a> 
+    </p>
+    <div class="white-button button">
+        <a href="{% url 'inicio' %}"><em>Inicio</em></a>
+    </div>
+</section>
 {% endblock %}

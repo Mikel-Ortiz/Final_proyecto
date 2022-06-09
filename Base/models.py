@@ -30,7 +30,7 @@ class Eventos(models.Model):
     def __str__(self):
         return self.nombre
 
-class Entradas_blog(models.Model):
+class Blog(models.Model):
     titulo = models.CharField(max_length=200)
     contenido = models.CharField(max_length=200)
     imagen = models.ImageField(upload_to="media/")
@@ -46,7 +46,6 @@ class Contacto(models.Model):
     correo = models.EmailField()
     asunto = models.CharField(max_length=250)
     mensaje = models.CharField(max_length=500)
-
 
     def __str__(self):
         return self.nombre

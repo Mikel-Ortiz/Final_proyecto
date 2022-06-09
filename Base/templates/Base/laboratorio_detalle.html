@@ -2,18 +2,26 @@
 
 {% load static %}
 
-{% block DirectorioLaboratorios %}
+{% block Pagina %}
 
-<p>NOMBRE: <i>{{laboratorio.nombre}}</i></p>
-<p>DESCRIPCIÓN : <i>{{laboratorio.descripción}}</i></p>
-<p>FOTO : <i>{{laboratorio.foto}}</i></p>
+<section id="featured" class="content-section">
+    <div class="section-heading">
+        <h1>Directorios<br><em>de Laboratorios</em></h1>
+        <p>Laboratorios en la Escuela Superior de Medicna 
+        <br>del Instituto Politécnico Nacional</p>
 
-<p>
-    <a href="{% url 'laboratorio_listar' %}">REGRESAR</a>
-</p>
+    </div>
 
-<p>
-    <a href="{% url 'laboratorio_crear' %}"><button>AÑADIR</button></a>
-</p>
+    <p>NOMBRE: <i>{{laboratorio.nombre}}</i></p>
+    <p>DESCRIPCIÓN : <i>{{laboratorio.descripción}}</i></p>
+    <p>FOTO : <i>{{laboratorio.foto}}</i></p>
 
+    <p>
+        <a href="{% url 'laboratorio_listar' %}">REGRESAR</a> 
+    </p>
+
+</section>
+<div class="white-button button">
+    <a href="{% url 'inicio' %}"><em>Inicio</em></a>
+</div>
 {% endblock %}
